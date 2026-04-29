@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bobby Wilson | Creative Studio</title>
+<meta name="description" content="Colecionáveis exclusivos, arte, tecnologia e identidade em cada peça.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#0e0e0e;
+color:#fff;
+line-height:1.5;
+}
+a{text-decoration:none}
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+header{
+background:#111;
+border-bottom:1px solid #2d2d2d;
+position:sticky;
+top:0;
+z-index:999;
+}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+.logo{
+font-size:28px;
+font-weight:900;
+letter-spacing:2px;
+color:#c59a45;
+}
+.logo span{
+display:block;
+font-size:12px;
+font-weight:400;
+letter-spacing:4px;
+color:#ddd;
+margin-top:3px;
+}
+.menu{
+display:flex;
+gap:25px;
+align-items:center;
+}
+.menu a{
+color:#fff;
+font-size:14px;
+font-weight:700;
+}
+.btn{
+background:#c59a45;
+color:#111;
+padding:12px 22px;
+border-radius:6px;
+font-weight:900;
+display:inline-block;
+}
+.hero{
+padding:80px 0;
+background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+}
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+.hero h1{
+font-size:58px;
+line-height:1.05;
+margin-bottom:20px;
+}
+.gold{color:#c59a45}
+.hero p{
+font-size:20px;
+color:#d6d6d6;
+margin-bottom:30px;
+max-width:550px;
+}
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+.btn-outline{
+border:2px solid #c59a45;
+color:#c59a45;
+padding:10px 22px;
+border-radius:6px;
+font-weight:700;
+}
+.mockup-box{
+background:#191919;
+border:1px solid #333;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+.mockup-box img{
+max-width:100%;
+border-radius:10px;
+}
+.section{
+padding:70px 0;
+}
+.section-title{
+font-size:38px;
+margin-bottom:15px;
+text-align:center;
+}
+.section-sub{
+text-align:center;
+color:#cfcfcf;
+max-width:700px;
+margin:0 auto 40px;
+}
+.grid-4{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+.card{
+background:#171717;
+padding:25px;
+border-radius:10px;
+border:1px solid #2a2a2a;
+text-align:center;
+}
+.card h3{
+margin-bottom:10px;
+color:#c59a45;
+}
+.product{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+.price{
+font-size:42px;
+font-weight:900;
+color:#c59a45;
+margin:20px 0;
+}
+.list{
+margin:20px 0;
+}
+.list li{
+margin-bottom:10px;
+color:#ddd;
+}
+footer{
+padding:40px 0;
+background:#111;
+border-top:1px solid #333;
+text-align:center;
+color:#aaa;
+}
+footer a{color:#c59a45}
+@media(max-width:900px){
+.hero-grid,.product,.grid-4{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:42px;
+}
+.menu{
+display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">
+BOBBY WILSON
+<span>CREATIVE STUDIO</span>
+</div>
+
+<nav class="menu">
+<a href="#sobre">Sobre</a>
+<a href="#produto">Produto</a>
+<a href="#nfc">NFC</a>
+<a href="https://instagram.com/bobbywilson3d" target="_blank">Instagram</a>
+<a href="https://wa.me/5519999551961" target="_blank" class="btn">WhatsApp</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div>
+<h1>ARTE, TECNOLOGIA E <span class="gold">IDENTIDADE</span> EM CADA PEÇA</h1>
+
+<p>
+Colecionáveis exclusivos criados com impressão 3D premium, acabamento artesanal e presença marcante.
+</p>
+
+<div class="hero-buttons">
+<a href="https://wa.me/5519999551961" target="_blank" class="btn">QUERO O MEU</a>
+<a href="#produto" class="btn-outline">VER COLEÇÃO</a>
+</div>
+</div>
+
+<div class="mockup-box">
+<img src="mockup-site.jpg" alt="Mascote Bobby Wilson">
+</div>
+
+</div>
+</section>
+
+<section class="section" id="sobre">
+<div class="container">
+<h2 class="section-title">POR QUE A BOBBY WILSON?</h2>
+<p class="section-sub">
+Criamos peças que representam paixão, história e personalidade. Não vendemos plástico. Entregamos presença.
+</p>
+
+<div class="grid-4">
+<div class="card">
+<h3>Artesanal</h3>
+<p>Pintura e acabamento manual.</p>
+</div>
+
+<div class="card">
+<h3>Exclusivo</h3>
+<p>Produção limitada por lote.</p>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<p>Alta qualidade visual e física.</p>
+</div>
+
+<div class="card">
+<h3>Brasil</h3>
+<p>Enviamos para todo país.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="produto">
+<div class="container product">
+
+<div class="mockup-box">
+<img src="mascote-produto.jpg" alt="Mascote Colecionável">
+</div>
+
+<div>
+<h2 class="section-title" style="text-align:left;">MASCOTE COLECIONÁVEL PREMIUM</h2>
+
+<p style="color:#ddd;">
+Peça exclusiva desenvolvida para apaixonados por identidade, coleção e presença.
+</p>
+
+<div class="price">R$ 349,90</div>
+
+<ul class="list">
+<li>✔ Altura aproximada 14 cm</li>
+<li>✔ Produção artesanal</li>
+<li>✔ Acabamento premium</li>
+<li>✔ Edição limitada</li>
+</ul>
+
+<a href="https://wa.me/5519999551961" target="_blank" class="btn">ENCOMENDAR</a>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="nfc">
+<div class="container">
+<h2 class="section-title">TECNOLOGIA NFC INTEGRADA</h2>
+
+<p class="section-sub">
+Encoste o celular na base da peça e acesse conteúdos especiais, Instagram oficial, bastidores e futuras coleções.
+</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p><strong>Bobby Wilson Creative Studio</strong></p>
+<p>Campinas - SP • Brasil</p>
+<p>
+<a href="mailto:bobbywilson3d@gmail.com">bobbywilson3d@gmail.com</a> |
+<a href="https://instagram.com/bobbywilson3d" target="_blank">@bobbywilson3d</a>
+</p>
+<p style="margin-top:15px;">© 2024 Bobby Wilson. Todos os direitos reservados.</p>
+</div>
+</footer>
+
+</body>
+</html>
