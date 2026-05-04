@@ -1,1 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BobbyWilson | 3D Printing & Creations</title>
+  <meta name="description" content="Colecionáveis exclusivos, arte, tecnologia e identidade em cada peça. BobbyWilson 3D Printing & Creations." />
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --color-bg: #110f0d;
+      --color-surface: #171411;
+      --color-surface-2: #1f1b17;
+      --color-surface-3: #251f1a;
+      --color-border: rgba(204, 152, 94, 0.28);
+      --color-border-strong: rgba(219, 163, 98, 0.58);
+      --color-text: #f1e8dc;
+      --color-text-muted: #cbbca9;
+      --color-text-faint: #9e8d79;
+      --color-primary: #c88d53;
+      --color-primary-strong: #e0a86d;
+      --color-primary-soft: rgba(200, 141, 83, 0.12);
+      --color-shadow: rgba(0, 0, 0, 0.45);
+      --radius-sm: 0.5rem;
+      --radius-md: 0.85rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.75rem;
+      --content: 1240px;
+      --font-body: Inter, system-ui, sans-serif;
+      --font-display: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, rgba(200,141,83,0.09), transparent 28%),
+        linear-gradient(180deg, #0a0908 0%, #12100e 35%, #0e0c0a 100%);
+      line-height: 1.55;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .section { padding: clamp(3rem, 5vw, 6rem) 0; }
+    .eyebrow {
+      color: var(--color-primary);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+    }
+    .title-display {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #f2eadf;
+      text-wrap: balance;
+    }
+    .title-section {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .script {
+      display: block;
+      color: var(--color-primary-strong);
+      font-family: 'Brush Script MT', cursive;
+      font-size: clamp(2rem, 1.8rem + 2vw, 3.2rem);
+      text-transform: none;
+      letter-spacing: 0.02em;
+      margin-top: 0.25rem;
+    }
+    .muted { color: var(--color-text-muted); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-8); }
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      border-radius: 0.85rem;
+      border: 1px solid var(--color-border-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      transition: 180ms ease;
+    }
+    .btn-primary {
+      background: linear-gradient(180deg, #d7a064 0%, #b5773e 100%);
+      color: #140f0a;
+      box-shadow: 0 10px 30px rgba(181, 119, 62, 0.22);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.02);
+      color: var(--color-text);
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 8, 7, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .header-wrap {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--space-6);
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--color-border);
+      background: #221d18;
+    }
+    .brand-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 0.85;
+      letter-spacing: 0.03em;
+    }
+    .brand-text span {
+      display: block;
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 2vw, 2rem);
+      flex-wrap: wrap;
+    }
+    .nav a {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+    }
+    .nav a:hover, .nav a.active { color: var(--color-text); }
+    .header-cta {
+      padding-inline: 1.35rem;
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 4vw, 4rem) 0 2rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,6,5,0.92) 0%, rgba(7,6,5,0.68) 40%, rgba(7,6,5,0.3) 100%),
+        radial-gradient(circle at 15% 40%, rgba(133, 27, 18, 0.24), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(200,141,83,0.08), transparent 20%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: clamp(2rem, 4vw, 4rem);
+      min-height: 78vh;
+    }
+    .hero-copy p {
+      max-width: 33rem;
+      color: var(--color-text-muted);
+      margin-top: var(--space-5);
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+    }
+    .hero-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 620px;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 78%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,141,83,0.18), transparent 68%);
+      filter: blur(8px);
+    }
+    .hero-main {
+      position: relative;
+      width: min(100%, 660px);
+      filter: drop-shadow(0 40px 60px rgba(0,0,0,0.45));
+    }
+    .hero-badge,
+    .hero-nfc {
+      position: absolute;
+      right: 0;
+      border: 1px solid var(--color-border);
+      background: rgba(20, 16, 12, 0.8);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .hero-badge {
+      top: 8%;
+      width: min(34%, 220px);
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 0.5rem;
+    }
+    .hero-nfc {
+      bottom: 14%;
+      width: min(38%, 220px);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+    }
+    .hero-nfc strong {
+      display: block;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: var(--text-xs);
+      margin-bottom: 0.35rem;
+    }
+    .hero-nfc span {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.5rem + 1vw, 3rem);
+      line-height: 0.9;
+    }
+    .hero-nfc small {
+      display: block;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .feature-bar {
+      position: relative;
+      z-index: 2;
+      margin-top: 1rem;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(200,141,83,0.12);
+    }
+    .feature-item {
+      background: rgba(18, 15, 12, 0.92);
+      padding: 1.25rem;
+    }
+    .feature-item h3 {
+      font-size: var(--text-base);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      color: var(--color-primary-strong);
+    }
+    .feature-item p { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      padding-top: 1.25rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: var(--text-xs);
+    }
+
+    .section-dark { background: linear-gradient(180deg, rgba(20,16,13,0.95), rgba(14,12,10,1)); }
+    .panel {
+      background: linear-gradient(180deg, rgba(28, 23, 19, 0.92), rgba(18, 15, 12, 0.96));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 28px 60px var(--color-shadow);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr 0.95fr;
+      gap: var(--space-6);
+      padding: clamp(1.2rem, 2vw, 2rem);
+    }
+    .product-card,
+    .about-card { padding: 1rem; }
+    .product-specs ul {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.25rem 0;
+      color: var(--color-text-muted);
+    }
+    .product-specs li::before {
+      content: "✓";
+      color: var(--color-primary-strong);
+      margin-right: 0.55rem;
+    }
+    .product-price {
+      margin: 1.25rem 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .product-price strong {
+      display: block;
+      color: var(--color-primary-strong);
+      font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+      line-height: 1;
+      margin-top: 0.35rem;
+    }
+    .product-visual {
+      display: grid;
+      gap: 1rem;
+    }
+    .visual-main,
+    .visual-thumb {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: radial-gradient(circle at top, #2a241e, #120f0d 70%);
+      min-height: 180px;
+    }
+    .visual-main {
+      display: grid;
+      place-items: center;
+      padding: 1.25rem;
+      min-height: 520px;
+    }
+    .visual-main img { max-height: 470px; object-fit: contain; }
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .visual-thumb { min-height: 160px; display: grid; place-items: center; padding: 0.8rem; }
+    .visual-thumb img { max-height: 140px; object-fit: contain; }
+    .about-card p { color: var(--color-text-muted); margin-top: 1rem; }
+
+    .nfc-band {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      background: linear-gradient(90deg, rgba(35,25,18,0.95), rgba(14,10,8,0.97));
+    }
+    .nfc-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: var(--space-8);
+      align-items: center;
+      padding: clamp(2rem, 4vw, 4rem) 0;
+    }
+    .nfc-wrap img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: radial-gradient(circle at top, #2b241d, #0f0d0b 75%);
+      padding: 1rem;
+      max-height: 430px;
+      object-fit: contain;
+    }
+    .icon-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .icon-list div {
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.02);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: 0.85fr repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .collection-card {
+      min-height: 260px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(25,20,17,0.92), rgba(15,12,10,0.98));
+      position: relative;
+      padding: 1.25rem;
+    }
+    .collection-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.24;
+      filter: grayscale(0.2) brightness(0.8);
+    }
+    .collection-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(11,9,8,0.94));
+    }
+    .collection-card > * { position: relative; z-index: 1; }
+    .collection-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    .collection-card p { color: var(--color-text-muted); margin-top: 1rem; max-width: 22ch; }
+    .collection-card.coming {
+      display: grid;
+      place-items: end start;
+    }
+    .coming-label {
+      display: inline-flex;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: 999px;
+      color: var(--color-primary-strong);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .testimonials,
+    .instagram-box { padding: 1.5rem; }
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .quote {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: rgba(255,255,255,0.02);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .quote strong { display: block; color: var(--color-text); margin-top: 0.8rem; }
+    .instagram-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .instagram-strip .tile {
+      min-height: 140px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: radial-gradient(circle at top, #30271f, #120f0c 72%);
+      display: grid;
+      place-items: center;
+      padding: 0.5rem;
+    }
+    .instagram-strip img { max-height: 120px; object-fit: contain; }
+
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      background: #0d0b09;
+      padding: 2.5rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr 0.8fr 0.9fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .footer-col {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.02);
+    }
+    .footer-col h3 {
+      color: var(--color-primary-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: var(--text-sm);
+      margin-bottom: 0.8rem;
+    }
+    .footer-col p, .footer-col a, .footer-col li {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-col ul { list-style: none; display: grid; gap: 0.6rem; }
+    .footer-selo {
+      width: 120px;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 1px solid var(--color-border);
+    }
+    .copyright {
+      text-align: center;
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      margin-top: 1.2rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 30;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #d7a064, #b5773e);
+      color: #1a120b;
+      font-size: 1.4rem;
+      border: 1px solid var(--color-border-strong);
+      box-shadow: 0 18px 32px rgba(0,0,0,0.35);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .product-grid,
+      .nfc-wrap,
+      .social-grid,
+      .footer-grid,
+      .collections-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-grid,
+      .quotes,
+      .icon-list,
+      .thumb-grid,
+      .instagram-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-wrap {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+      .nav { justify-content: flex-start; }
+      .hero-stage { min-height: auto; padding-bottom: 2rem; }
+      .hero-badge, .hero-nfc { position: static; width: min(240px, 100%); margin-top: 1rem; }
+      .hero-stage { justify-items: start; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 1rem), var(--content)); }
+      .feature-grid,
+      .quotes,
+      .icon-list,
+      .thumb-grid,
+      .instagram-strip {
+        grid-template-columns: 1fr;
+      }
+      .brand-text strong { font-size: 1.6rem; }
+      .nav { gap: 0.8rem 1rem; }
+      .nav a { font-size: 0.8rem; }
+      .btn-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .visual-main { min-height: 360px; }
+      .visual-main img { max-height: 320px; }
+      .collection-card { min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" style="position:absolute;left:-9999px;top:auto;">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#inicio" aria-label="BobbyWilson">
+        <img src="./assets/img/Selo.PNG" alt="Selo BobbyWilson" width="120" height="120" />
+        <div class="brand-text">
+          <strong>BOBBY<br>WILSON</strong>
+          <span>3D Printing & Creations</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a class="active" href="#inicio">Início</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#nfc">NFC Experience</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn btn-secondary header-cta" href="https://wa.me/5519999551961" target="_blank" rel="noopener noreferrer">Fale no WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Colecionáveis exclusivos</p>
+          <h1 class="title-display">Arte, tecnologia e identidade <span class="script">em cada peça.</span></h1>
+          <p>
+            Mascotes colecionáveis produzidos em impressão 3D premium, pintados à mão e criados em edições limitadas para quem valoriza presença, acabamento e personalidade.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#produto-destaque">Quero o meu</a>
+            <a class="btn btn-secondary" href="#colecoes">Ver coleção</a>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-label="Destaque visual da marca">
+          <div class="hero-glow"></div>
+          <img class="hero-main" src="./assets/img/bobby-hero.PNG" alt="Mascote principal Bobby Wilson em destaque na primeira página" width="1344" height="896" />
+          <div class="hero-badge">
+            <img src="./assets/img/Selo.PNG" alt="Selo BobbyWilson 3D Printing & Creations" width="600" height="600" />
+          </div>
+          <div class="hero-nfc">
+            <strong>Tecnologia</strong>
+            <span>NFC</span>
+            <small>Conteúdos exclusivos</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="container feature-bar">
+        <div class="feature-grid">
+          <article class="feature-item">
+            <h3>Impressão 3D de alta qualidade</h3>
+            <p>Tecnologia avançada para definição, proporção e acabamento premium.</p>
+          </article>
+          <article class="feature-item">
+            <h3>Pintura artesanal</h3>
+            <p>Acabamento feito à mão, peça por peça, com atenção real aos detalhes.</p>
+          </article>
+          <article class="feature-item">
+            <h3>Edições limitadas</h3>
+            <p>Produção seletiva para preservar exclusividade e valor colecionável.</p>
+          </article>
+          <article class="feature-item">
+            <h3>Embalagem premium</h3>
+            <p>Apresentação pensada para experiência, proteção e impacto de entrega.</p>
+          </article>
+        </div>
+        <div class="trust-row">
+          <span>Feito no Brasil</span>
+          <span>Produção artesanal</span>
+          <span>Edições limitadas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="produto-destaque">
+      <div class="container panel product-grid">
+        <div class="product-card product-specs">
+          <p class="eyebrow">Produto em destaque</p>
+          <h2 class="title-section">Mascote colecionável premium</h2>
+          <p class="muted" style="margin-top:1rem;">Peça central para abertura comercial do site, pronta para ser substituída depois por novos lançamentos sem mudar a estrutura da página.</p>
+          <ul>
+            <li>Escultura autoral com presença premium.</li>
+            <li>Impressão 3D com acabamento refinado.</li>
+            <li>Pintura manual e identidade própria.</li>
+            <li>Possibilidade futura de ativar NFC exclusivo.</li>
+            <li>Bloco pronto para venda direta via WhatsApp.</li>
+          </ul>
+          <div class="product-price">Peça em destaque da coleção atual<strong>Consulte disponibilidade</strong></div>
+          <a class="btn btn-primary" href="https://wa.me/5519999551961?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20pe%C3%A7a%20em%20destaque%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer">Quero garantir a minha</a>
+        </div>
+
+        <div class="product-visual">
+          <div class="visual-main">
+            <img src="./assets/img/mascote-produto.jpg" alt="Peça colecionável em destaque para venda" width="1264" height="844" />
+          </div>
+          <div class="thumb-grid">
+            <div class="visual-thumb"><img src="./assets/img/mascote-produto.jpg" alt="Peça em destaque vista alternativa 1" width="1264" height="844" /></div>
+            <div class="visual-thumb"><img src="./assets/img/bobby-hero.PNG" alt="Ligação visual com o personagem institucional BobbyWilson" width="1344" height="896" /></div>
+          </div>
+        </div>
+
+        <aside class="about-card" id="sobre">
+          <p class="eyebrow">Sobre a marca</p>
+          <h2 class="title-section">Feito para quem valoriza história.</h2>
+          <p>
+            A BobbyWilson nasceu da união entre criação, cultura visual, escultura e acabamento premium. Cada peça carrega presença, assinatura e uma linguagem própria de coleção.
+          </p>
+          <p>
+            O personagem Bobby Wilson abre a experiência da marca como símbolo institucional. Já as páginas comerciais e os destaques de produto foram pensados para receber peças reais, lançamentos e futuras coleções.
+          </p>
+          <p>
+            O site foi estruturado para crescer com consistência visual, sem remendos, mantendo a mesma estética da primeira impressão até as áreas internas de venda e contato.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="nfc-band" id="nfc">
+      <div class="container nfc-wrap">
+        <img src="./assets/img/Selo.PNG" alt="Selo BobbyWilson representando autenticidade e experiência NFC" width="600" height="600" />
+        <div>
+          <p class="eyebrow">NFC Experience</p>
+          <h2 class="title-section">Tecnologia NFC integrada</h2>
+          <p class="muted" style="margin-top:1rem; max-width:46rem;">
+            Aproximando o celular da peça, a experiência BobbyWilson pode evoluir para certificado, bastidores da criação, autenticação, conteúdos exclusivos e lançamentos vinculados ao colecionável.
+          </p>
+          <div class="icon-list">
+            <div>Certificado de autenticidade</div>
+            <div>Conteúdos exclusivos</div>
+            <div>Bastidores da criação</div>
+            <div>Lançamentos e novidades</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colecoes">
+      <div class="container">
+        <p class="eyebrow">Coleções</p>
+        <h2 class="title-section">Linha visual pronta para expansão</h2>
+        <div class="collections-grid">
+          <article class="collection-card">
+            <h3>Em breve</h3>
+            <p>Novos mascotes, novas histórias e novas variações visuais preparadas para futuras entradas da coleção.</p>
+            <div class="btn-row" style="margin-top:1.2rem;"><a class="btn btn-secondary" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer">Acompanhar no Instagram</a></div>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/mascote-produto.jpg" alt="Prévia de próxima coleção BobbyWilson" width="1264" height="844" />
+            <div class="overlay"></div>
+            <span class="coming-label">Em breve</span>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/bobby-hero.PNG" alt="Prévia de futura coleção com assinatura BobbyWilson" width="1344" height="896" />
+            <div class="overlay"></div>
+            <span class="coming-label">Em breve</span>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/Selo.PNG" alt="Prévia de linha premium BobbyWilson" width="600" height="600" />
+            <div class="overlay"></div>
+            <span class="coming-label">Em breve</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container social-grid">
+        <div class="panel testimonials">
+          <p class="eyebrow">Quem coleciona, aprova</p>
+          <h2 class="title-section">Percepção premium em cada detalhe</h2>
+          <div class="quotes">
+            <div class="quote">“Acabamento muito forte visualmente e presença absurda na peça.”<strong>— Cliente BobbyWilson</strong></div>
+            <div class="quote">“A proposta une tecnologia, identidade e coleção de um jeito único.”<strong>— Colecionador</strong></div>
+            <div class="quote">“A marca já transmite exclusividade antes mesmo do produto chegar.”<strong>— Público da marca</strong></div>
+          </div>
+        </div>
+
+        <aside class="panel instagram-box">
+          <p class="eyebrow">Instagram oficial</p>
+          <h2 class="title-section">@bobbywilson3d</h2>
+          <p class="muted" style="margin-top:1rem;">Acompanhe lançamentos, bastidores, novas peças e atualizações da identidade visual da marca.</p>
+          <div class="instagram-strip">
+            <div class="tile"><img src="./assets/img/Selo.PNG" alt="Identidade visual BobbyWilson no Instagram" width="600" height="600" /></div>
+            <div class="tile"><img src="./assets/img/mascote-produto.jpg" alt="Produto BobbyWilson para divulgação no Instagram" width="1264" height="844" /></div>
+            <div class="tile"><img src="./assets/img/bobby-hero.PNG" alt="Mascote institucional BobbyWilson para divulgação" width="1344" height="896" /></div>
+          </div>
+          <div class="btn-row" style="margin-top:1rem;"><a class="btn btn-secondary" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer">Abrir Instagram</a></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand" style="align-items:flex-start;">
+          <img src="./assets/img/Selo.PNG" alt="Selo BobbyWilson no rodapé" width="120" height="120" />
+          <div class="brand-text">
+            <strong>BOBBY<br>WILSON</strong>
+            <span>3D Printing & Creations</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem;">Arte, tecnologia e identidade visual em peças premium criadas para quem busca presença e exclusividade.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#colecoes">Coleções</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#nfc">NFC Experience</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Atendimento</h3>
+        <ul>
+          <li><a href="https://wa.me/5519999551961" target="_blank" rel="noopener noreferrer">WhatsApp: +55 19 99955-1961</a></li>
+          <li><a href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer">Instagram: @bobbywilson3d</a></li>
+          <li><a href="https://bobbywilson3d.github.io/bobbywilson-site/" target="_blank" rel="noopener noreferrer">Site atual no GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" style="text-align:center;">
+        <h3>Assinatura</h3>
+        <img class="footer-selo" src="./assets/img/Selo.PNG" alt="Selo institucional BobbyWilson" width="600" height="600" />
+      </div>
+    </div>
+    <div class="container copyright">© 2026 BobbyWilson 3D Printing & Creations. Todos os direitos reservados.</div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/5519999551961" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">✆</a>
+</body>
+</html>
