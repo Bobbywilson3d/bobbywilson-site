@@ -1,1 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>BobbyWilson | Colecionáveis Premium</title>
+
+<meta name="description" content="Peças colecionáveis premium, impressão 3D artística, acabamento cinematográfico e tecnologia NFC.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#090807;
+--gold:#d89c61;
+--gold2:#efb678;
+--text:#f4ebdf;
+--muted:#ccbba6;
+--panel:#15110e;
+--border:rgba(216,156,97,.18);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+.site-header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+background:rgba(7,7,7,.72);
+backdrop-filter:blur(16px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.header-wrap{
+max-width:1400px;
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:18px 40px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.brand img{
+width:54px;
+height:54px;
+border-radius:50%;
+}
+
+.brand-text strong{
+display:block;
+font-size:28px;
+line-height:.9;
+font-weight:800;
+}
+
+.brand-text span{
+font-size:11px;
+letter-spacing:2px;
+color:var(--muted);
+}
+
+.nav{
+display:flex;
+gap:34px;
+}
+
+.nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+.nav a:hover{
+color:var(--gold);
+}
+
+.whatsapp-btn{
+padding:14px 22px;
+border:1px solid var(--gold);
+border-radius:10px;
+text-decoration:none;
+font-size:13px;
+font-weight:700;
+color:var(--gold);
+}
+
+.whatsapp-btn:hover{
+background:var(--gold);
+color:#111;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+min-height:100vh;
+
+background-image:url('assets/img/hero-cinema.png');
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+
+overflow:hidden;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,.90) 0%,
+rgba(0,0,0,.78) 28%,
+rgba(0,0,0,.42) 60%,
+rgba(0,0,0,.12) 100%
+);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+
+max-width:1400px;
+margin:auto;
+
+width:100%;
+
+padding:180px 60px 120px;
+}
+
+.hero-text{
+max-width:620px;
+}
+
+.hero-mini{
+display:block;
+margin-bottom:24px;
+
+font-size:14px;
+font-weight:700;
+letter-spacing:4px;
+
+color:var(--gold);
+}
+
+.hero h1{
+font-size:92px;
+line-height:.92;
+font-weight:800;
+
+margin-bottom:10px;
+}
+
+.hero-script{
+display:block;
+
+font-size:64px;
+font-style:italic;
+
+color:var(--gold2);
+
+margin-bottom:28px;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.7;
+color:#d2d2d2;
+
+margin-bottom:42px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+padding:18px 34px;
+border-radius:10px;
+
+font-size:14px;
+font-weight:700;
+letter-spacing:1px;
+
+text-decoration:none;
+transition:.25s;
+}
+
+.btn-primary{
+background:linear-gradient(180deg,var(--gold2),#ca8746);
+color:#111;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+border:1px solid var(--gold);
+color:#fff;
+}
+
+.btn-secondary:hover{
+background:var(--gold);
+color:#111;
+}
+
+/* BENEFITS */
+
+.benefits{
+margin-top:-60px;
+position:relative;
+z-index:5;
+padding:0 30px;
+}
+
+.benefits-wrap{
+max-width:1400px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+
+background:rgba(15,12,10,.94);
+
+border:1px solid var(--border);
+border-radius:24px;
+
+overflow:hidden;
+}
+
+.benefit{
+padding:34px;
+border-right:1px solid var(--border);
+}
+
+.benefit:last-child{
+border-right:none;
+}
+
+.benefit h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.benefit span{
+display:block;
+margin-bottom:16px;
+
+font-size:13px;
+font-weight:700;
+letter-spacing:2px;
+
+color:var(--gold);
+}
+
+.benefit p{
+color:#bdb2a3;
+line-height:1.6;
+}
+
+/* SECTION */
+
+.section{
+padding:120px 40px;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+}
+
+.section-title{
+font-size:58px;
+font-weight:800;
+line-height:1;
+
+margin-bottom:22px;
+}
+
+.section-text{
+max-width:760px;
+font-size:19px;
+line-height:1.7;
+color:#c7bcaf;
+}
+
+/* PRODUCT */
+
+.product-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+
+align-items:center;
+
+margin-top:70px;
+}
+
+.product-card{
+background:#13100d;
+border:1px solid var(--border);
+
+padding:40px;
+border-radius:28px;
+}
+
+.price{
+font-size:56px;
+font-weight:800;
+color:var(--gold);
+
+margin:24px 0;
+}
+
+.product-card ul{
+padding-left:18px;
+margin-bottom:34px;
+}
+
+.product-card li{
+margin-bottom:14px;
+color:#d2c6b8;
+}
+
+/* COLLECTIONS */
+
+.collections{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:26px;
+
+margin-top:60px;
+}
+
+.collection-card{
+background:#13100d;
+border:1px solid var(--border);
+
+border-radius:26px;
+
+padding:34px;
+}
+
+.collection-card img{
+width:100%;
+height:240px;
+object-fit:contain;
+
+margin-bottom:24px;
+}
+
+.collection-card h3{
+font-size:30px;
+margin-bottom:14px;
+}
+
+.collection-card p{
+line-height:1.7;
+color:#cdbfae;
+}
+
+/* FOOTER */
+
+footer{
+padding:90px 40px 50px;
+background:#060606;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer-grid{
+max-width:1400px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.footer-box{
+background:#111;
+padding:32px;
+border-radius:22px;
+}
+
+.footer-box h4{
+margin-bottom:18px;
+color:var(--gold);
+}
+
+.footer-box p,
+.footer-box a{
+color:#cbbdac;
+line-height:1.9;
+text-decoration:none;
+}
+
+.copyright{
+margin-top:40px;
+text-align:center;
+font-size:13px;
+color:#777;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px){
+
+.nav{
+display:none;
+}
+
+.hero h1{
+font-size:72px;
+}
+
+.hero-script{
+font-size:48px;
+}
+
+.benefits-wrap,
+.product-grid,
+.collections,
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.benefit{
+border-right:none;
+border-bottom:1px solid var(--border);
+}
+
+.benefit:last-child{
+border-bottom:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content{
+padding:160px 30px 90px;
+}
+
+.hero{
+background-position:72% center;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.hero-script{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.btn-primary,
+.btn-secondary{
+width:100%;
+text-align:center;
+}
+
+.section-title{
+font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="header-wrap">
+
+<div class="brand">
+<img src="assets/img/Selo.PNG" alt="Bobby Wilson">
+
+<div class="brand-text">
+<strong>BOBBY<br>WILSON</strong>
+<span>3D PRINTING & CREATIONS</span>
+</div>
+</div>
+
+<nav class="nav">
+<a href="#">INÍCIO</a>
+<a href="#produto">DESTAQUE</a>
+<a href="#colecoes">COLEÇÕES</a>
+<a href="#sobre">SOBRE</a>
+<a href="#contato">CONTATO</a>
+</nav>
+
+<a href="https://wa.me/5519999551961" class="whatsapp-btn">
+WHATSAPP
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<span class="hero-mini">
+COLECIONÁVEIS EXCLUSIVOS
+</span>
+
+<h1>
+ARTE, TECNOLOGIA
+</h1>
+
+<span class="hero-script">
+e identidade.
+</span>
+
+<p>
+Mascotes colecionáveis produzidos em impressão 3D premium,
+pintados à mão e criados em edições limitadas para verdadeiros apaixonados.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#colecoes" class="btn-primary">
+QUERO O MEU
+</a>
+
+<a href="#colecoes" class="btn-secondary">
+VER COLEÇÃO
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="benefits">
+
+<div class="benefits-wrap">
+
+<div class="benefit">
+<h3>IMPRESSÃO 3D</h3>
+<span>PREMIUM</span>
+<p>Tecnologia avançada com acabamento profissional.</p>
+</div>
+
+<div class="benefit">
+<h3>PINTURA</h3>
+<span>ARTESANAL</span>
+<p>Detalhamento manual peça por peça.</p>
+</div>
+
+<div class="benefit">
+<h3>EDIÇÃO</h3>
+<span>LIMITADA</span>
+<p>Produções exclusivas para colecionadores.</p>
+</div>
+
+<div class="benefit">
+<h3>NFC</h3>
+<span>SMART EXPERIENCE</span>
+<p>Integração digital e autenticidade premium.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="produto">
+
+<div class="container">
+
+<h2 class="section-title">
+COLECIONÁVEL PREMIUM
+</h2>
+
+<p class="section-text">
+Peça principal da coleção Bobby Wilson preparada para futuras expansões premium.
+</p>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="assets/img/mascote-produto.jpg" alt="">
+</div>
+
+<div>
+
+<div class="price">
+R$ 1.850
+</div>
+
+<div class="product-card">
+
+<ul>
+<li>Escultura premium exclusiva</li>
+<li>Pintura manual artística</li>
+<li>Acabamento profissional</li>
+<li>Visual cinematográfico</li>
+<li>Edição limitada</li>
+</ul>
+
+<a href="#" class="btn-primary">
+RESERVAR PEÇA
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="colecoes">
+
+<div class="container">
+
+<h2 class="section-title">
+PRÓXIMAS COLEÇÕES
+</h2>
+
+<p class="section-text">
+O universo Bobby Wilson continuará expandindo mascotes e colecionáveis premium.
+</p>
+
+<div class="collections">
+
+<div class="collection-card">
+<img src="assets/img/bobby-hero.PNG">
+<h3>LEGACY</h3>
+<p>Coleções cinematográficas exclusivas.</p>
+</div>
+
+<div class="collection-card">
+<img src="assets/img/mascote-produto.jpg">
+<h3>LIMITED</h3>
+<p>Produções limitadas para colecionadores reais.</p>
+</div>
+
+<div class="collection-card">
+<img src="assets/img/Selo.PNG">
+<h3>NFC SERIES</h3>
+<p>Experiências digitais premium e autenticadas.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer id="contato">
+
+<div class="footer-grid">
+
+<div class="footer-box">
+<h4>BOBBY WILSON</h4>
+<p>
+Arte, tecnologia e identidade em colecionáveis premium.
+</p>
+</div>
+
+<div class="footer-box">
+<h4>NAVEGAÇÃO</h4>
+
+<p><a href="#">Início</a></p>
+<p><a href="#produto">Destaque</a></p>
+<p><a href="#colecoes">Coleções</a></p>
+</div>
+
+<div class="footer-box">
+<h4>CONTATO</h4>
+
+<p>
+<a href="https://wa.me/5519999551961">
+WhatsApp
+</a>
+</p>
+
+<p>
+<a href="https://www.instagram.com/bobbywilson3d/">
+Instagram
+</a>
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Bobby Wilson — Todos os direitos reservados.
+</div>
+
+</footer>
+
+</body>
+</html>
