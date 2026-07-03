@@ -1,1 +1,2500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BobbyWilson | Colecionáveis premium com assinatura própria</title>
+  <meta name="description" content="Colecionáveis premium com presença, acabamento artesanal, identidade própria e potencial de expansão com tecnologia NFC." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="BobbyWilson | Colecionáveis premium" />
+  <meta property="og:description" content="Arte, presença e identidade em cada peça." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bobbywilson3d.github.io/bobbywilson-site/" />
+  <meta property="og:image" content="https://bobbywilson3d.github.io/bobbywilson-site/assets/img/hero-chave.jpg" />
+  <meta name="theme-color" content="#090806" />
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BobbyWilson | Colecionáveis premium" />
+  <meta name="twitter:description" content="Arte, presença e identidade em cada peça. Colecionáveis premium com tecnologia NFC." />
+  <meta name="twitter:image" content="https://bobbywilson3d.github.io/bobbywilson-site/assets/img/hero-chave.jpg" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bobbywilson3d.github.io/bobbywilson-site/" />
+  <!-- Preload hero -->
+  <link rel="preload" as="image" href="./assets/img/BOBBY-HERO-OFICIAL.PNG" fetchpriority="high" />
+  <!-- JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "BobbyWilson 3D Printing Creations",
+    "description": "Estúdio brasileiro de colecionáveis premium em impressão 3D com pintura artesanal e tecnologia NFC.",
+    "url": "https://bobbywilson3d.github.io/bobbywilson-site/",
+    "logo": "https://bobbywilson3d.github.io/bobbywilson-site/assets/img/Selo.jpg",
+    "image": "https://bobbywilson3d.github.io/bobbywilson-site/assets/img/BOBBY-HERO-OFICIAL.PNG",
+    "telephone": "+5519999551961",
+    "sameAs": ["https://www.instagram.com/bobbywilson3d/"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": "Portuguese",
+      "contactOption": "TollFree"
+    }
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BOBBY3D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BOBBY3D');
+    function trackEvent(name, params){
+      if (typeof gtag === 'function') gtag('event', name, params || {});
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DESIGN TOKENS — compartilhados desktop e mobile
+    ============================================================ */
+    :root {
+      --bg: #090806;
+      --bg-2: #120f0c;
+      --surface: rgba(20, 16, 12, 0.94);
+      --surface-2: rgba(27, 22, 17, 0.96);
+      --surface-soft: rgba(255,255,255,0.03);
+      --border: rgba(215, 170, 108, 0.18);
+      --border-strong: rgba(232, 184, 122, 0.38);
+      --text: #f4ebdf;
+      --muted: #d0c0ab;
+      --faint: #9c8a74;
+      --gold: #db9f62;
+      --gold-2: #efb97c;
+      --shadow: rgba(0, 0, 0, 0.42);
+      --shadow-strong: rgba(0, 0, 0, 0.62);
+      --radius-sm: 0.8rem;
+      --radius-md: 1rem;
+      --radius-lg: 1.4rem;
+      --radius-xl: 1.9rem;
+      --content: 1220px;
+      --text-xs: clamp(0.75rem, 0.72rem + 0.18vw, 0.875rem);
+      --text-sm: clamp(0.92rem, 0.86rem + 0.18vw, 1rem);
+      --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
+      --text-lg: clamp(1.15rem, 1.02rem + 0.45vw, 1.4rem);
+      --text-xl: clamp(1.8rem, 1.35rem + 1vw, 2.8rem);
+      --text-2xl: clamp(2.3rem, 1.6rem + 2vw, 4.2rem);
+      --text-hero: clamp(2.9rem, 2rem + 2.5vw, 5.6rem);
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-display: 'Cinzel', serif;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 82% 14%, rgba(216,156,97,0.07), transparent 22%),
+        radial-gradient(circle at 16% 42%, rgba(130,35,20,0.10), transparent 18%),
+        linear-gradient(180deg, #090806 0%, #0d0a08 42%, #090806 100%);
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .section { padding: clamp(4rem, 7vw, 6.5rem) 0; }
+    .panel {
+      background: linear-gradient(180deg, rgba(24,19,15,0.95), rgba(14,11,9,0.98));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 24px 48px var(--shadow);
+    }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: var(--text-xs);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .title-hero,
+    .title-xl,
+    .title-section,
+    .brand-text strong,
+    .collection-card h3,
+    .hero-nfc span {
+      font-family: var(--font-display);
+      line-height: 0.96;
+      text-wrap: balance;
+    }
+    .title-hero { font-size: var(--text-hero); letter-spacing: 0.02em; }
+    .title-xl { font-size: var(--text-2xl); letter-spacing: 0.02em; }
+    .title-section { font-size: var(--text-xl); letter-spacing: 0.02em; }
+    .script {
+      display: block;
+      margin-top: 0.45rem;
+      font-family: var(--font-body);
+      color: var(--gold-2);
+      font-size: clamp(1rem, 0.95rem + 0.7vw, 1.5rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .muted { color: var(--muted); }
+    .lead { color: var(--muted); font-size: clamp(1rem, 0.96rem + 0.25vw, 1.12rem); max-width: 38rem; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #18110b;
+      background: linear-gradient(180deg, #f1bc82 0%, #ce8b4d 100%);
+      box-shadow: 0 12px 32px rgba(201, 136, 73, 0.24);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.025);
+      color: var(--text);
+    }
+
+    /* ============================================================
+       DESKTOP HEADER
+    ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9,8,7,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .header-wrap {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 0.9rem 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .brand img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #17120e;
+    }
+    .brand-text strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: 0.02em;
+    }
+    .brand-text span {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 2vw, 2rem);
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--muted);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .nav a:hover, .nav a.active { color: var(--text); }
+
+    /* ============================================================
+       DESKTOP HERO
+    ============================================================ */
+    .hero-fullbg {
+      position: relative;
+      min-height: calc(100vh - 74px);
+      background-image: url('./assets/img/BOBBY-HERO-OFICIAL.PNG');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+    }
+    .hero-fullbg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,6,5,0.70) 0%, rgba(7,6,5,0.56) 30%, rgba(7,6,5,0.22) 56%, rgba(7,6,5,0.08) 100%),
+        linear-gradient(180deg, rgba(7,6,5,0.10) 0%, rgba(7,6,5,0.24) 100%);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), var(--content));
+      margin: 0 auto;
+      padding: 4.5rem 0 3.2rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: 1rem;
+      align-items: center;
+      min-height: calc(100vh - 170px);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+      max-width: 31rem;
+    }
+    .hero-copy .title-hero {
+      color: #f4ecdf;
+      text-shadow: 0 10px 30px rgba(0,0,0,.45);
+      text-transform: uppercase;
+    }
+    .hero-copy p { margin-top: 1.35rem; }
+    .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .trust-pills span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.52rem 0.86rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      backdrop-filter: blur(6px);
+    }
+    .trust-pills span::before {
+      content: '✦';
+      color: var(--gold-2);
+      font-size: 0.82rem;
+      line-height: 1;
+    }
+    .hero-stage,
+    .feature-wrap,
+    .feature-grid,
+    .feature-item,
+    .hero-bobby,
+    .hero-side,
+    .hero-card,
+    .hero-seal,
+    .hero-nfc { display: none !important; }
+
+    /* ============================================================
+       DESKTOP: PRODUCT / OFFER
+    ============================================================ */
+    .section-dark {
+      background: linear-gradient(180deg, rgba(20,16,13,0.96), rgba(11,9,8,1));
+      border-top: 1px solid rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr 0.9fr;
+      gap: 1rem;
+      padding: 1.2rem;
+    }
+    .offer-copy, .offer-about { padding: 1.25rem; }
+    .offer-copy ul {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.2rem 0 1.5rem;
+      color: var(--muted);
+    }
+    .offer-copy li::before {
+      content: '•';
+      color: var(--gold-2);
+      margin-right: 0.55rem;
+    }
+    .offer-price {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: var(--text-sm);
+    }
+    .offer-price strong {
+      display: block;
+      color: var(--gold-2);
+      font-size: clamp(2rem, 1.8rem + 1vw, 3.2rem);
+      line-height: 0.95;
+      margin-top: 0.45rem;
+      font-family: var(--font-display);
+    }
+    .offer-visual { display: grid; gap: 1rem; }
+    .visual-main, .visual-small {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: radial-gradient(circle at top, #2a221b, #100d0b 75%);
+    }
+    .visual-main {
+      min-height: 500px;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+    }
+    .visual-main img { max-height: 450px; object-fit: contain; }
+    .visual-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .visual-small {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      padding: 0.8rem;
+    }
+    .visual-small img { max-height: 150px; object-fit: contain; }
+    .offer-about p { color: var(--muted); margin-top: 1rem; }
+
+    /* ============================================================
+       DESKTOP: NFC
+    ============================================================ */
+    .nfc-band {
+      background: linear-gradient(90deg, rgba(25,20,15,0.98), rgba(10,8,7,0.98));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .nfc-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.5rem;
+      align-items: center;
+      padding: clamp(2.5rem, 4vw, 4.5rem) 0;
+    }
+    .nfc-media {
+      min-height: 360px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top, #2e261e, #100d0a 75%);
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .nfc-media img { max-height: 320px; object-fit: contain; }
+    .nfc-badges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+    .nfc-badges div {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.018);
+      color: var(--muted);
+      padding: 1rem;
+      text-transform: uppercase;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+    }
+
+    /* ============================================================
+       DESKTOP: COLLECTIONS
+    ============================================================ */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: 0.95fr repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+    .collection-card {
+      position: relative;
+      min-height: 270px;
+      padding: 1.3rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(24,19,15,0.94), rgba(15,12,10,0.98));
+    }
+    .collection-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.16;
+      filter: brightness(0.55);
+    }
+    .collection-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(8,7,6,0.95));
+    }
+    .collection-card > * { position: relative; z-index: 1; }
+    .collection-card h3 {
+      font-size: clamp(1.8rem, 1.5rem + 1vw, 3rem);
+      text-transform: uppercase;
+    }
+    .collection-card p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 24ch;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      color: var(--gold-2);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .collection-card.coming { display: grid; place-items: end start; }
+
+    /* ============================================================
+       DESKTOP: SOCIAL / TESTIMONIALS
+    ============================================================ */
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+    .testimonials, .instagram-box { padding: 1.25rem; }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .quote {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.016);
+    }
+    .quote strong {
+      display: block;
+      margin-top: 0.9rem;
+      color: var(--text);
+      font-size: var(--text-sm);
+    }
+    .instagram-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .instagram-tile {
+      min-height: 130px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: radial-gradient(circle at top, #2c231b, #0f0c09 75%);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 0.5rem;
+    }
+    .instagram-tile img { max-height: 110px; object-fit: contain; }
+
+    /* ============================================================
+       DESKTOP: FOOTER
+    ============================================================ */
+    .site-footer {
+      background: #090807;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 2.8rem 0 1.2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.72fr 0.78fr 0.92fr;
+      gap: 1rem;
+    }
+    .footer-card {
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.018);
+      padding: 1rem;
+    }
+    .footer-card h3 {
+      color: var(--gold-2);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+    .footer-card p, .footer-card li { color: var(--muted); font-size: var(--text-sm); }
+    .footer-card a { color: var(--muted); font-size: var(--text-sm); white-space: nowrap; }
+    .footer-card ul { list-style: none; display: grid; gap: 0.6rem; }
+    .footer-selo {
+      width: 120px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 1.2rem;
+      color: var(--faint);
+      font-size: var(--text-xs);
+    }
+
+    /* ============================================================
+       FLOATING WHATSAPP (desktop)
+    ============================================================ */
+    .floating-whatsapp {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 60;
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #efb678, #ca8849);
+      color: #1a120b;
+      font-size: 1.35rem;
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.36);
+    }
+    .floating-whatsapp::before { content: '✦'; }
+
+    /* ============================================================
+       DESKTOP RESPONSIVE BREAKPOINTS (preservados do original)
+    ============================================================ */
+    .hero-fullbg { background-position: center; }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .offer-grid,
+      .nfc-grid,
+      .collections-grid,
+      .social-grid,
+      .footer-grid { grid-template-columns: 1fr; }
+      .feature-grid,
+      .quote-grid,
+      .nfc-badges,
+      .instagram-strip,
+      .visual-row { grid-template-columns: repeat(2, 1fr); }
+      .header-wrap { grid-template-columns: 1fr; justify-items: start; }
+      .nav { justify-content: flex-start; }
+      .hero-grid { min-height: auto; gap: 1rem; }
+      .hero-stage { min-height: 120px; margin-top: 0; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 1rem), var(--content)); }
+      .quote-grid,
+      .nfc-badges,
+      .instagram-strip,
+      .visual-row { grid-template-columns: 1fr; }
+      .btn-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-fullbg { min-height: 78vh; background-position: 62% center; }
+      .hero-overlay { padding: 3.5rem 0 2rem; }
+      .hero-stage { min-height: 80px; }
+      .visual-main { min-height: 360px; }
+      .visual-main img { max-height: 320px; }
+      .collection-card { min-height: 220px; }
+      .brand-text strong { font-size: 1.4rem; }
+    }
+
+    /* ============================================================
+       MOBILE-ONLY ELEMENTS — ocultos no desktop
+    ============================================================ */
+    .mobile-header,
+    .mobile-urgency,
+    .mobile-hero,
+    .mobile-product,
+    .mobile-nfc,
+    .mobile-collections,
+    .mobile-testimonials,
+    .mobile-instagram,
+    .mobile-footer,
+    .mobile-nav-overlay,
+    .mobile-menu { display: none; }
+
+    /* ============================================================
+       ██████╗  MOBILE EXPERIENCE ██████╗
+       Tudo abaixo só existe no celular
+    ============================================================ */
+    @media (max-width: 768px) {
+
+      /* Oculta tudo do desktop */
+      .site-header,
+      .hero-fullbg,
+      #produto-destaque,
+      .nfc-band,
+      #colecoes,
+      .section-dark,
+      .site-footer,
+      .floating-whatsapp { display: none !important; }
+
+      /* Ativa mobile */
+      .mobile-header,
+      .mobile-hero,
+      .mobile-product,
+      .mobile-nfc,
+      .mobile-collections,
+      .mobile-testimonials,
+      .mobile-instagram,
+      .mobile-footer { display: block; }
+
+      /* ---- RESET BODY PARA MOBILE ---- */
+      body {
+        background: #090806;
+        overflow-x: hidden;
+      }
+
+      /* ==============================
+         MOBILE HEADER
+      ============================== */
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        background: rgba(9,8,6,0.97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(232,184,122,0.10);
+      }
+      .mh-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.55rem 1rem;
+        gap: 0.5rem;
+      }
+      .mh-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1;
+        min-width: 0;
+      }
+      .mh-brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid rgba(232,184,122,0.25);
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+      .mh-name {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        color: var(--text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .mh-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.48rem 0.9rem;
+        background: linear-gradient(180deg, #f1bc82, #ce8b4d);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #18110b;
+        white-space: nowrap;
+        flex-shrink: 0;
+        border: 1px solid rgba(232,184,122,0.3);
+      }
+      .mh-menu-btn {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(232,184,122,0.15);
+        border-radius: 10px;
+        background: rgba(20,16,12,0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .mh-menu-btn span {
+        display: block;
+        width: 18px;
+        height: 1.5px;
+        background: var(--gold-2);
+        border-radius: 2px;
+        transition: 0.22s ease;
+      }
+
+      /* ==============================
+         MOBILE URGENCY BAR
+      ============================== */
+      .mobile-urgency {
+        display: block;
+        background: linear-gradient(90deg, rgba(219,159,98,0.12), rgba(239,185,124,0.06), rgba(219,159,98,0.12));
+        border-bottom: 1px solid rgba(232,184,122,0.14);
+        padding: 0.38rem 1rem;
+        text-align: center;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--gold-2);
+      }
+      .mobile-urgency::before { content: '✦ '; }
+      .mobile-urgency::after { content: ' ✦'; }
+
+      /* ==============================
+         MOBILE NAV OVERLAY
+      ============================== */
+      .mobile-nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 190;
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 78vw;
+        max-width: 300px;
+        background: #12100d;
+        border-left: 1px solid rgba(232,184,122,0.12);
+        z-index: 195;
+        padding: 1.4rem 1.2rem;
+        transform: translateX(100%);
+        transition: transform 0.28s ease;
+      }
+      .mobile-menu.open { display: block; transform: translateX(0); }
+      .mobile-nav-overlay.open { display: block; }
+      .mm-close {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1.5rem;
+      }
+      .mm-close button {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(232,184,122,0.15);
+        border-radius: 50%;
+        background: rgba(20,16,12,0.95);
+        color: var(--gold-2);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mm-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .mm-links a {
+        display: block;
+        padding: 0.85rem 0.6rem;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        transition: color 0.15s;
+      }
+      .mm-links a:hover { color: var(--gold-2); }
+      .mm-wpp {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .mm-wpp a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        background: linear-gradient(180deg, #f1bc82, #ce8b4d);
+        color: #18110b;
+        border: 1px solid rgba(232,184,122,0.3);
+      }
+
+      /* ==============================
+         MOBILE HERO
+      ============================== */
+      .mobile-hero {
+        position: relative;
+        min-height: 88vh;
+        background-image: url('./assets/img/BOBBY-HERO-OFICIAL.PNG');
+        background-size: cover;
+        background-position: 60% center;
+        display: flex;
+        align-items: flex-end;
+        isolation: isolate;
+        overflow: hidden;
+      }
+      .mobile-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(9,8,6,0.15) 0%,
+          rgba(9,8,6,0.30) 35%,
+          rgba(9,8,6,0.72) 65%,
+          rgba(9,8,6,0.97) 100%
+        );
+        z-index: 1;
+      }
+      .mh-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 0 1.1rem 2.2rem;
+      }
+      .mh-eyebrow {
+        display: inline-block;
+        color: var(--gold-2);
+        font-size: 0.66rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.7rem;
+        padding: 0.3rem 0.7rem;
+        border: 1px solid rgba(232,184,122,0.25);
+        border-radius: 999px;
+        background: rgba(232,184,122,0.06);
+      }
+      .mh-title {
+        font-family: var(--font-display);
+        font-size: clamp(2.6rem, 10vw, 3.6rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+        color: #f4ecdf;
+        text-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        margin-bottom: 0.4rem;
+      }
+      .mh-subtitle {
+        font-size: 0.85rem;
+        color: var(--gold-2);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 0.9rem;
+      }
+      .mh-desc {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.5;
+        max-width: 28ch;
+        margin-bottom: 1.4rem;
+      }
+      .mh-pills {
+        display: flex;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.4rem;
+      }
+      .mh-pills span {
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        padding: 0.32rem 0.65rem;
+        border: 1px solid rgba(232,184,122,0.18);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        backdrop-filter: blur(6px);
+      }
+      .mh-pills span::before { content: '✦ '; color: var(--gold-2); }
+      .mh-cta-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .mh-btn-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 100%;
+        min-height: 56px;
+        background: linear-gradient(180deg, #f1bc82, #ce8b4d);
+        border-radius: 16px;
+        font-size: 0.95rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #18110b;
+        border: 1px solid rgba(232,184,122,0.4);
+        box-shadow: 0 14px 32px rgba(201,136,73,0.30), 0 0 0 1px rgba(232,184,122,0.1);
+        transition: transform 0.15s;
+      }
+      .mh-btn-main:active { transform: scale(0.98); }
+      .mh-btn-main .wpp-icon {
+        font-size: 1.15rem;
+      }
+      .mh-btn-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid rgba(232,184,122,0.22);
+        border-radius: 14px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        background: rgba(255,255,255,0.025);
+      }
+
+      /* ==============================
+         MOBILE PRODUCT SECTION
+      ============================== */
+      .mobile-product {
+        padding: 2.2rem 1rem 2rem;
+        background: linear-gradient(180deg, rgba(20,16,13,0.98), rgba(11,9,8,1));
+        border-top: 1px solid rgba(255,255,255,0.04);
+      }
+      .mp-eyebrow {
+        color: var(--gold);
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.55rem;
+      }
+      .mp-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        line-height: 0.95;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+      }
+      .mp-image-wrap {
+        width: 100%;
+        aspect-ratio: 4/3;
+        border: 1px solid var(--border);
+        border-radius: 1.2rem;
+        overflow: hidden;
+        background: radial-gradient(circle at top, #2a221b, #100d0b 75%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.4rem;
+        position: relative;
+      }
+      .mp-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .mp-badge {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.8rem;
+        background: rgba(9,8,6,0.88);
+        border: 1px solid var(--border-strong);
+        border-radius: 999px;
+        padding: 0.3rem 0.65rem;
+        font-size: 0.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold-2);
+      }
+      .mp-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+        margin-bottom: 1.4rem;
+      }
+      .mp-feat {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.75rem 0.7rem;
+        border: 1px solid rgba(232,184,122,0.12);
+        border-radius: 1rem;
+        background: rgba(255,255,255,0.02);
+      }
+      .mp-feat-icon {
+        font-size: 1rem;
+        line-height: 1;
+        flex-shrink: 0;
+        margin-top: 0.05rem;
+        color: var(--gold-2);
+      }
+      .mp-feat-text {
+        font-size: 0.74rem;
+        color: var(--muted);
+        line-height: 1.35;
+        font-weight: 600;
+      }
+      .mp-price-block {
+        background: linear-gradient(135deg, rgba(219,159,98,0.08), rgba(239,185,124,0.04));
+        border: 1px solid rgba(232,184,122,0.18);
+        border-radius: 1.2rem;
+        padding: 1.1rem;
+        margin-bottom: 1.1rem;
+        text-align: center;
+      }
+      .mp-price-label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--faint);
+        margin-bottom: 0.3rem;
+      }
+      .mp-price-value {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 6vw, 1.9rem);
+        color: var(--gold-2);
+        line-height: 1;
+        margin-bottom: 0.2rem;
+      }
+      .mp-price-sub {
+        font-size: 0.68rem;
+        color: var(--faint);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .mp-cta-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 100%;
+        min-height: 56px;
+        background: linear-gradient(180deg, #f1bc82, #ce8b4d);
+        border-radius: 14px;
+        font-size: 0.92rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #18110b;
+        border: 1px solid rgba(232,184,122,0.4);
+        box-shadow: 0 10px 28px rgba(201,136,73,0.22);
+        margin-bottom: 0.65rem;
+        transition: transform 0.15s;
+      }
+      .mp-cta-main:active { transform: scale(0.98); }
+      .mp-cta-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 46px;
+        border: 1px solid rgba(232,184,122,0.2);
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--muted);
+        background: rgba(255,255,255,0.025);
+      }
+      .mp-trust {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-top: 0.75rem;
+        font-size: 0.64rem;
+        color: var(--faint);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .mp-trust::before { content: '🔒'; font-size: 0.8rem; }
+
+      /* ==============================
+         MOBILE NFC SECTION
+      ============================== */
+      .mobile-nfc {
+        padding: 2rem 1rem;
+        background: linear-gradient(90deg, rgba(25,20,15,0.98), rgba(10,8,7,0.98));
+        border-top: 1px solid var(--border);
+      }
+      .mn-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid rgba(232,184,122,0.25);
+        margin: 0 auto 1.2rem;
+        overflow: hidden;
+        background: radial-gradient(circle, #2e261e, #100d0a 75%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mn-image img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+      }
+      .mn-header { text-align: center; margin-bottom: 1.2rem; }
+      .mn-eyebrow {
+        color: var(--gold);
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.4rem;
+      }
+      .mn-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+        line-height: 0.95;
+        text-transform: uppercase;
+      }
+      .mn-desc {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.5;
+        text-align: center;
+        max-width: 32ch;
+        margin: 0 auto 1.2rem;
+      }
+      .mn-badges {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+      }
+      .mn-badge {
+        border: 1px solid rgba(232,184,122,0.14);
+        border-radius: 0.9rem;
+        background: rgba(255,255,255,0.02);
+        padding: 0.75rem 0.7rem;
+        text-align: center;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .mn-badge-icon { font-size: 1.2rem; }
+
+      /* ==============================
+         MOBILE COLLECTIONS
+      ============================== */
+      .mobile-collections {
+        padding: 2rem 0 2rem;
+        border-top: 1px solid rgba(255,255,255,0.04);
+      }
+      .mc-header {
+        padding: 0 1rem;
+        margin-bottom: 1.1rem;
+      }
+      .mc-eyebrow {
+        color: var(--gold);
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.4rem;
+      }
+      .mc-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+        line-height: 0.95;
+        text-transform: uppercase;
+      }
+      /* Horizontal scroll carousel */
+      .mc-carousel {
+        display: flex;
+        gap: 0.8rem;
+        overflow-x: auto;
+        padding: 0.5rem 1rem 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .mc-carousel::-webkit-scrollbar { display: none; }
+      .mc-card {
+        flex: 0 0 76vw;
+        max-width: 300px;
+        scroll-snap-align: start;
+        border: 1px solid var(--border);
+        border-radius: 1.3rem;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(24,19,15,0.95), rgba(15,12,10,0.99));
+        position: relative;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem;
+      }
+      .mc-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.22;
+        filter: brightness(0.5);
+      }
+      .mc-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 40%, rgba(9,8,6,0.92) 100%);
+      }
+      .mc-card > * { position: relative; z-index: 1; }
+      .mc-card-title {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        line-height: 0.9;
+        margin-bottom: 0.4rem;
+      }
+      .mc-card-sub {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-bottom: 0.7rem;
+        line-height: 1.4;
+      }
+      .mc-pill {
+        display: inline-flex;
+        padding: 0.3rem 0.7rem;
+        border: 1px solid var(--border-strong);
+        border-radius: 999px;
+        font-size: 0.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold-2);
+      }
+      .mc-card-first .mc-card-cta {
+        margin-top: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+        min-height: 42px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(232,184,122,0.2);
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--muted);
+      }
+      .mc-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+      }
+      .mc-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(232,184,122,0.2);
+      }
+      .mc-dot.active { background: var(--gold-2); width: 18px; border-radius: 3px; }
+
+      /* ==============================
+         MOBILE TESTIMONIALS
+      ============================== */
+      .mobile-testimonials {
+        padding: 2rem 1rem;
+        background: linear-gradient(180deg, rgba(20,16,13,0.96), rgba(11,9,8,1));
+        border-top: 1px solid rgba(255,255,255,0.04);
+      }
+      .mt-eyebrow {
+        color: var(--gold);
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.4rem;
+      }
+      .mt-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.35rem, 6vw, 1.8rem);
+        line-height: 0.95;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+      }
+      .mt-quotes {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .mt-quote {
+        border: 1px solid rgba(232,184,122,0.12);
+        border-radius: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.02);
+        position: relative;
+        padding-left: 1.2rem;
+      }
+      .mt-quote::before {
+        content: '"';
+        position: absolute;
+        top: 0.5rem;
+        left: 0.8rem;
+        font-family: var(--font-display);
+        font-size: 2rem;
+        color: rgba(219,159,98,0.25);
+        line-height: 1;
+      }
+      .mt-quote-text {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.5;
+        margin-bottom: 0.55rem;
+        padding-top: 0.4rem;
+      }
+      .mt-quote-author {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold-2);
+      }
+      .mt-stars {
+        color: var(--gold-2);
+        font-size: 0.65rem;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ==============================
+         MOBILE INSTAGRAM
+      ============================== */
+      .mobile-instagram {
+        padding: 2rem 1rem;
+        border-top: 1px solid rgba(255,255,255,0.04);
+      }
+      .mi-eyebrow {
+        color: var(--gold);
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.4rem;
+      }
+      .mi-handle {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+        line-height: 0.95;
+        margin-bottom: 0.5rem;
+      }
+      .mi-desc {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+      .mi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .mi-tile {
+        aspect-ratio: 1;
+        background: radial-gradient(circle at top, #2c231b, #0f0c09 75%);
+        border: 1px solid rgba(232,184,122,0.1);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.7rem;
+      }
+      .mi-tile img { width: 100%; height: 100%; object-fit: cover; }
+      .mi-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        min-height: 50px;
+        border: 1px solid rgba(232,184,122,0.22);
+        border-radius: 14px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--text);
+        background: rgba(255,255,255,0.025);
+      }
+
+      /* ==============================
+         MOBILE FOOTER
+      ============================== */
+      .mobile-footer {
+        background: #080706;
+        border-top: 1px solid rgba(255,255,255,0.04);
+        padding: 2rem 1rem 1.5rem;
+      }
+      .mf-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .mf-brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        object-fit: cover;
+      }
+      .mf-brand-name {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        line-height: 0.95;
+        text-transform: uppercase;
+      }
+      .mf-brand-sub {
+        font-size: 0.62rem;
+        color: var(--faint);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 0.2rem;
+      }
+      .mf-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+        margin-bottom: 1.4rem;
+      }
+      .mf-link {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.75rem 0.8rem;
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 0.9rem;
+        background: rgba(255,255,255,0.018);
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .mf-link-icon { font-size: 0.95rem; }
+      .mf-wpp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 100%;
+        min-height: 52px;
+        background: linear-gradient(180deg, #f1bc82, #ce8b4d);
+        border-radius: 14px;
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #18110b;
+        border: 1px solid rgba(232,184,122,0.35);
+        box-shadow: 0 10px 28px rgba(201,136,73,0.20);
+        margin-bottom: 1.2rem;
+      }
+      .mf-copyright {
+        text-align: center;
+        font-size: 0.62rem;
+        color: var(--faint);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+      }
+
+      /* ==============================
+         FLOATING WHATSAPP — MOBILE
+      ============================== */
+      .mobile-float-wpp {
+        display: flex !important;
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 100;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #efb678, #ca8849);
+        border: 1.5px solid rgba(232,184,122,0.5);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 4px rgba(232,184,122,0.08);
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        animation: wpp-pulse 2.4s ease-in-out infinite;
+      }
+      .mobile-float-wpp::before { content: '✦'; color: #18110b; }
+      @keyframes wpp-pulse {
+        0%, 100% { box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 0 rgba(232,184,122,0.3); }
+        50% { box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 10px rgba(232,184,122,0); }
+      }
+
+    } /* end @media (max-width: 768px) */
+
+    /* ============================================================
+       MELHORIAS v2.0 — Master Prompt BobbyWilson
+       Incrementais: animações, hover, contraste, ergonomia
+    ============================================================ */
+
+    /* --- font-display swap para performance --- */
+    @font-face { font-display: swap; }
+
+    /* --- Scroll suave aprimorado --- */
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    /* --- Animação de entrada suave para seções --- */
+    @keyframes bw-fade-up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bw-fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes bw-glow-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(232,184,122,0); }
+      50%       { box-shadow: 0 0 22px 4px rgba(232,184,122,0.12); }
+    }
+    @keyframes bw-float-wpp {
+      0%, 100% { box-shadow: 0 18px 30px rgba(0,0,0,0.36), 0 0 0 0 rgba(239,182,120,0.28); }
+      50%       { box-shadow: 0 18px 30px rgba(0,0,0,0.36), 0 0 0 12px rgba(239,182,120,0); }
+    }
+
+    /* --- Observer para entradas animadas --- */
+    .bw-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s cubic-bezier(.22,.68,0,1.15), transform 0.65s cubic-bezier(.22,.68,0,1.15);
+    }
+    .bw-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .bw-reveal-delay-1 { transition-delay: 0.10s; }
+    .bw-reveal-delay-2 { transition-delay: 0.20s; }
+    .bw-reveal-delay-3 { transition-delay: 0.30s; }
+
+    /* ---- DESKTOP HEADER MELHORIAS ---- */
+    .site-header {
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(9,8,7,0.97);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+      border-bottom-color: rgba(215,170,108,0.12);
+    }
+    .nav a {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 1.5px;
+      background: var(--gold-2);
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+    .nav a:hover::after, .nav a.active::after { width: 100%; }
+
+    /* ---- BOTÕES DESKTOP MELHORIAS ---- */
+    .btn-primary {
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(201,136,73,0.38);
+      filter: brightness(1.08);
+    }
+    .btn-primary:active { transform: translateY(-1px); filter: brightness(0.97); }
+    .btn-secondary {
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(232,184,122,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* ---- HERO COPY — entrada animada ---- */
+    .hero-copy .eyebrow  { animation: bw-fade-up 0.7s ease both; animation-delay: 0.1s; }
+    .hero-copy .title-hero { animation: bw-fade-up 0.75s ease both; animation-delay: 0.22s; }
+    .hero-copy .lead     { animation: bw-fade-up 0.75s ease both; animation-delay: 0.38s; }
+    .hero-copy .trust-pills { animation: bw-fade-up 0.75s ease both; animation-delay: 0.50s; }
+    .hero-copy .btn-row  { animation: bw-fade-up 0.75s ease both; animation-delay: 0.62s; }
+
+    /* ---- TRUST PILLS — hover ---- */
+    .trust-pills span {
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.18s ease;
+      cursor: default;
+    }
+    .trust-pills span:hover {
+      border-color: rgba(232,184,122,0.35);
+      background: rgba(255,255,255,0.055);
+      transform: translateY(-1px);
+    }
+
+    /* ---- PANEL — iluminação premium ---- */
+    .panel {
+      transition: box-shadow 0.3s ease;
+    }
+    .panel:hover {
+      box-shadow: 0 32px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,184,122,0.08);
+    }
+
+    /* ---- VISUAL CARDS — hover ---- */
+    .visual-main, .visual-small {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .visual-main:hover {
+      border-color: rgba(232,184,122,0.32);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4), inset 0 0 30px rgba(216,156,97,0.04);
+    }
+
+    /* ---- NFC BADGES — hover ---- */
+    .nfc-badges div {
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      cursor: default;
+    }
+    .nfc-badges div:hover {
+      background: rgba(232,184,122,0.06);
+      border-color: rgba(232,184,122,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* ---- COLLECTION CARDS — hover ---- */
+    .collection-card {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .collection-card:hover {
+      border-color: rgba(232,184,122,0.28);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.42);
+      transform: translateY(-3px);
+    }
+    .collection-card img { transition: opacity 0.35s ease, transform 0.5s ease; }
+    .collection-card:hover img { opacity: 0.26; transform: scale(1.04); }
+
+    /* ---- QUOTES — hover ---- */
+    .quote {
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .quote:hover {
+      border-color: rgba(232,184,122,0.26);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* ---- INSTAGRAM TILE — hover ---- */
+    .instagram-tile {
+      transition: border-color 0.2s ease, transform 0.25s ease;
+    }
+    .instagram-tile:hover {
+      border-color: rgba(232,184,122,0.28);
+      transform: scale(1.03);
+    }
+
+    /* ---- FOOTER CARDS — hover ---- */
+    .footer-card {
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .footer-card:hover {
+      border-color: rgba(232,184,122,0.14);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* ---- FLOATING WHATSAPP DESKTOP — pulso ---- */
+    .floating-whatsapp {
+      transition: transform 0.2s ease;
+      animation: bw-float-wpp 2.8s ease-in-out infinite;
+    }
+    .floating-whatsapp:hover {
+      transform: scale(1.10);
+    }
+
+    /* ---- ACESSIBILIDADE — foco visível ---- */
+    :focus-visible {
+      outline: 2px solid var(--gold-2);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ============================================================
+       MOBILE MELHORIAS v2.0
+    ============================================================ */
+    @media (max-width: 768px) {
+
+      /* --- Urgency bar — animação de brilho suave --- */
+      @keyframes bw-urgency-shine {
+        0%   { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      .mobile-urgency {
+        background: linear-gradient(90deg,
+          rgba(219,159,98,0.10) 0%,
+          rgba(239,185,124,0.18) 40%,
+          rgba(239,185,124,0.22) 50%,
+          rgba(239,185,124,0.18) 60%,
+          rgba(219,159,98,0.10) 100%);
+        background-size: 200% auto;
+        animation: bw-urgency-shine 4s linear infinite;
+      }
+
+      /* --- Hero CTA — brilho no botão principal --- */
+      @keyframes bw-btn-shine {
+        0%   { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      .mh-btn-main {
+        position: relative;
+        overflow: hidden;
+      }
+      .mh-btn-main::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 60%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+        animation: bw-btn-shine 2.6s ease-in-out 1.5s infinite;
+      }
+
+      /* --- CTA produto — mesmo brilho --- */
+      .mp-cta-main {
+        position: relative;
+        overflow: hidden;
+      }
+      .mp-cta-main::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 60%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+        animation: bw-btn-shine 3s ease-in-out 2s infinite;
+      }
+
+      /* --- NFC badges — hover/touch feedback --- */
+      .mn-badge {
+        transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      }
+      .mn-badge:active {
+        background: rgba(232,184,122,0.08);
+        transform: scale(0.97);
+      }
+
+      /* --- Collection cards — touch feedback --- */
+      .mc-card { transition: transform 0.2s ease; }
+      .mc-card:active { transform: scale(0.97); }
+
+      /* --- Testimonials cards — micro-elevação --- */
+      .mt-quote {
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .mt-quote:hover {
+        border-color: rgba(232,184,122,0.22);
+        background: rgba(255,255,255,0.035);
+      }
+
+      /* --- Footer links — touch feedback --- */
+      .mf-link { transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+      .mf-link:active { transform: scale(0.96); }
+
+      /* --- Mobile floating WPP — pulso aprimorado --- */
+      @keyframes bw-mobile-wpp-pulse {
+        0%, 100% {
+          box-shadow: 0 12px 28px rgba(0,0,0,0.35), 0 0 0 0 rgba(232,184,122,0.35);
+        }
+        50% {
+          box-shadow: 0 12px 28px rgba(0,0,0,0.35), 0 0 0 12px rgba(232,184,122,0);
+        }
+      }
+      .mobile-float-wpp {
+        animation: bw-mobile-wpp-pulse 2.2s ease-in-out infinite;
+        transition: transform 0.18s ease;
+      }
+      .mobile-float-wpp:active { transform: scale(0.92); }
+
+      /* --- MP features — touch feedback --- */
+      .mp-feat { transition: background 0.18s, border-color 0.18s; }
+      .mp-feat:active {
+        background: rgba(232,184,122,0.05);
+        border-color: rgba(232,184,122,0.22);
+      }
+
+      /* --- Texto mais legível nos cards --- */
+      .mc-card-sub { line-height: 1.55; }
+      .mn-desc { line-height: 1.6; }
+      .mt-quote-text { line-height: 1.58; }
+      .mi-desc { line-height: 1.55; }
+
+      /* --- Instagram grid — touch feedback --- */
+      .mi-tile { transition: opacity 0.2s; }
+      .mi-tile:active { opacity: 0.8; }
+
+      /* --- Footer wpp botão — brilho --- */
+      .mf-wpp {
+        position: relative;
+        overflow: hidden;
+      }
+      .mf-wpp::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 60%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+        animation: bw-btn-shine 3.5s ease-in-out 2.5s infinite;
+      }
+
+      /* --- Melhoria de espaçamento geral mobile --- */
+      .mobile-product { padding: 2.4rem 1.1rem 2.2rem; }
+      .mobile-nfc     { padding: 2.2rem 1.1rem 2rem; }
+      .mobile-testimonials { padding: 2.2rem 1.1rem 2rem; }
+      .mobile-instagram    { padding: 2rem 1.1rem; }
+      .mobile-footer       { padding: 2.2rem 1.1rem 1.8rem; }
+
+      /* --- Header CTA — melhor toque --- */
+      .mh-cta { min-height: 36px; padding: 0.5rem 1rem; }
+
+    } /* end @media mobile */
+
+  </style>
+</head>
+<body>
+  <a href="#conteudo" style="position:absolute;left:-9999px;top:auto;">Pular para o conteúdo</a>
+
+  <!-- ============================================================
+       DESKTOP — preservado integralmente
+  ============================================================ -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#inicio" aria-label="BobbyWilson">
+        <img src="./assets/img/BOBBY-ROSTO.PNG" alt="Rosto institucional Bobby Wilson" width="120" height="120" />
+        <div class="brand-text">
+          <strong>BOBBY<br>WILSON</strong>
+          <span>3D Printing Creations</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a class="active" href="#inicio">Início</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#nfc">NFC Experience</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn-secondary" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson%20e%20quero%20mais%20informações.%20Quero%20saber%20sobre%20as%20peças%2C%20valores%20e%20como%20funciona%20a%20experiência%20BobbyWilson." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_header',{location:'header'})">Fale no WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero-fullbg" id="inicio">
+      <div class="hero-overlay">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Colecionáveis exclusivos</div>
+            <h1 class="title-hero">Arte, presença<br>e identidade<span class="script">em cada peça</span></h1>
+            <p class="lead">Mascotes colecionáveis produzidos em impressão 3D premium, pintados manualmente e apresentados com linguagem visual forte para quem compra exclusividade no primeiro olhar.</p>
+            <div class="trust-pills">
+              <span>Impressão 3D premium</span>
+              <span>Pintura artesanal</span>
+              <span>Edições limitadas</span>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson%20e%20quero%20mais%20informações.%20Quero%20saber%20sobre%20as%20peças%2C%20valores%20e%20como%20funciona%20a%20experiência%20BobbyWilson." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_hero',{location:'hero'})">✦ Garantir minha peça</a>
+              <a class="btn btn-secondary" href="#colecoes">Ver coleção</a>
+            </div>
+          </div>
+          <div class="hero-stage" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="produto-destaque" data-bw-reveal>
+      <div class="container panel offer-grid">
+        <div class="offer-copy">
+          <p class="eyebrow">Peça em destaque</p>
+          <h2 class="title-xl">Colecionável premium</h2>
+          <p class="muted" style="margin-top:1rem;">Peça central da coleção atual, preparada para abrir relacionamento comercial, valorizar presença de marca e sustentar futuras entradas da coleção sem alterar a estrutura principal do site.</p>
+          <ul>
+            <li>Escultura autoral com presença premium.</li>
+            <li>Acabamento pensado para alto valor percebido.</li>
+            <li>Pintura manual com assinatura visual própria.</li>
+            <li>Possibilidade de expansão com NFC exclusivo.</li>
+            <li>Venda consultiva direta pelo WhatsApp.</li>
+          </ul>
+          <div class="offer-price">Disponibilidade sob consulta<strong>Reserve pelo WhatsApp</strong></div>
+          <a class="btn btn-primary" href="https://wa.me/5519999551961?text=Olá%2C%20quero%20saber%20sobre%20a%20peça%20em%20destaque%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_product',{location:'desktop_product'})">✦ Quero esta peça agora</a>
+        </div>
+        <div class="offer-visual">
+          <div class="visual-main">
+            <img src="./assets/img/mascote-produto.jpg" alt="Produto em destaque da BobbyWilson" width="1264" height="844" />
+          </div>
+          <div class="visual-row">
+            <div class="visual-small">
+              <img src="./assets/img/mascote-produto.jpg" alt="Detalhe do produto em destaque" width="1264" height="844" />
+            </div>
+            <div class="visual-small">
+              <img src="./assets/img/bobby-hero.jpg" alt="Assinatura visual da marca BobbyWilson" width="1344" height="896" />
+            </div>
+          </div>
+        </div>
+        <aside class="offer-about" id="sobre">
+          <p class="eyebrow">Sobre a marca</p>
+          <h2 class="title-xl">Feito para quem valoriza história</h2>
+          <p>A BobbyWilson une criação, cultura visual, escultura e acabamento premium em objetos com presença, assinatura e valor de coleção.</p>
+          <p>O personagem Bobby Wilson entra como símbolo institucional da marca, fortalecendo identidade, reconhecimento e confiança já na primeira impressão.</p>
+          <p>Cada seção foi pensada para vender com clareza, transmitir segurança visual e ampliar o desejo de possuir peças exclusivas com linguagem própria.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section nfc-band" id="nfc" data-bw-reveal>
+      <div class="container nfc-grid">
+        <div class="nfc-media">
+          <img src="./assets/img/Selo.jpg" alt="Selo BobbyWilson associado à proposta NFC" width="600" height="600" />
+        </div>
+        <div>
+          <p class="eyebrow">NFC Experience</p>
+          <h2 class="title-xl">Tecnologia NFC integrada</h2>
+          <p class="muted" style="margin-top:1rem; max-width:46rem;">Ao aproximar o celular da peça, a experiência BobbyWilson pode evoluir para autenticação, certificado, bastidores da criação, lançamentos exclusivos e aumento do valor percebido do colecionável.</p>
+          <div class="nfc-badges">
+            <div>Certificado de autenticidade</div>
+            <div>Conteúdos exclusivos</div>
+            <div>Bastidores da criação</div>
+            <div>Lançamentos e novidades</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colecoes" data-bw-reveal>
+      <div class="container">
+        <p class="eyebrow">Coleções</p>
+        <h2 class="title-xl">Linha visual pronta para expansão</h2>
+        <div class="collections-grid">
+          <article class="collection-card">
+            <h3>Em breve</h3>
+            <p>Novos mascotes, novas histórias e novas variações visuais preparadas para futuras entradas da coleção.</p>
+            <div class="btn-row" style="margin-top:1rem;">
+              <a class="btn btn-secondary" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'social'})">✦ Acompanhar no Instagram</a>
+            </div>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/mascote-produto.jpg" alt="Prévia da próxima coleção BobbyWilson" width="1264" height="844" />
+            <div class="overlay"></div>
+            <span class="pill">Em breve</span>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/bobby-hero.jpg" alt="Prévia institucional BobbyWilson" width="1344" height="896" />
+            <div class="overlay"></div>
+            <span class="pill">Em breve</span>
+          </article>
+          <article class="collection-card coming">
+            <img src="./assets/img/Selo.jpg" alt="Prévia da linha premium BobbyWilson" width="600" height="600" />
+            <div class="overlay"></div>
+            <span class="pill">Em breve</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" data-bw-reveal>
+      <div class="container social-grid">
+        <div class="panel testimonials">
+          <p class="eyebrow">Quem coleciona, aprova</p>
+          <h2 class="title-xl">Percepção premium em cada detalhe</h2>
+          <div class="quote-grid">
+            <div class="quote">Acabamento muito forte visualmente e presença absurda na peça.<strong>Cliente BobbyWilson</strong></div>
+            <div class="quote">A proposta une tecnologia, identidade e coleção de um jeito único.<strong>Colecionador</strong></div>
+            <div class="quote">A marca já transmite exclusividade antes mesmo do produto chegar.<strong>Público da marca</strong></div>
+          </div>
+        </div>
+        <aside class="panel instagram-box">
+          <p class="eyebrow">Instagram oficial</p>
+          <h2 class="title-xl">@bobbywilson3d</h2>
+          <p class="muted" style="margin-top:1rem;">Acompanhe bastidores, novas peças, identidade visual e movimentos da coleção BobbyWilson.</p>
+          <div class="instagram-strip">
+            <div class="instagram-tile"><img src="./assets/img/Selo.jpg" alt="Identidade BobbyWilson no Instagram" width="600" height="600" /></div>
+            <div class="instagram-tile"><img src="./assets/img/mascote-produto.jpg" alt="Produto BobbyWilson no Instagram" width="1264" height="844" /></div>
+            <div class="instagram-tile"><img src="./assets/img/bobby-hero.jpg" alt="Hero BobbyWilson para divulgação" width="1344" height="896" /></div>
+          </div>
+          <div class="btn-row" style="margin-top:1rem;">
+            <a class="btn btn-secondary" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'social'})">Abrir Instagram</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-card">
+        <div class="brand" style="align-items:flex-start;">
+          <img src="./assets/img/Selo.jpg" alt="Selo BobbyWilson no rodapé" width="120" height="120" />
+          <div class="brand-text">
+            <strong>BOBBY<br>WILSON</strong>
+            <span>3D Printing Creations</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem;">Arte, tecnologia e identidade visual em peças premium criadas para quem busca presença, valor percebido e exclusividade.</p>
+      </div>
+      <div class="footer-card">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#colecoes">Coleções</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#nfc">NFC Experience</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-card">
+        <h3>Atendimento</h3>
+        <ul>
+          <li><a href="https://wa.me/5519999551961" target="_blank" rel="noopener noreferrer">WhatsApp +55 19 99955-1961</a></li>
+          <li><a href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'social'})">Instagram @bobbywilson3d</a></li>
+          <li><a href="https://bobbywilson3d.github.io/bobbywilson-site/" target="_blank" rel="noopener noreferrer">Site publicado</a></li>
+        </ul>
+      </div>
+      <div class="footer-card" style="text-align:center;">
+        <h3>Assinatura</h3>
+        <img class="footer-selo" src="./assets/img/Selo.jpg" alt="Selo institucional BobbyWilson" width="600" height="600" />
+      </div>
+    </div>
+    <div class="container copyright">© 2026 BobbyWilson 3D Printing Creations. Todos os direitos reservados.</div>
+  </footer>
+
+  <!-- Desktop floating WhatsApp -->
+  <a class="floating-whatsapp" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"></a>
+
+
+  <!-- ============================================================
+       MOBILE EXPERIENCE — completamente novo, só aparece ≤768px
+  ============================================================ -->
+
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header" role="banner">
+    <div class="mh-inner">
+      <a class="mh-brand" href="#m-inicio" aria-label="BobbyWilson">
+        <img src="./assets/img/BOBBY-ROSTO.PNG" alt="BobbyWilson" width="68" height="68" />
+        <span class="mh-name">BOBBY WILSON</span>
+      </a>
+      <a class="mh-cta" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_mheader',{location:'mobile_header'})">
+        ✦ WhatsApp
+      </a>
+      <button class="mh-menu-btn" aria-label="Abrir menu" id="mMenuBtn" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- URGENCY BAR -->
+  <div class="mobile-urgency" role="note">
+    Edição limitada · Reserve agora pelo WhatsApp
+  </div>
+
+  <!-- MOBILE NAV OVERLAY + MENU -->
+  <div class="mobile-nav-overlay" id="mNavOverlay" role="presentation"></div>
+  <nav class="mobile-menu" id="mMenu" aria-label="Menu mobile">
+    <div class="mm-close">
+      <button id="mMenuClose" aria-label="Fechar menu">✕</button>
+    </div>
+    <ul class="mm-links">
+      <li><a href="#m-inicio" class="mm-nav-link">Início</a></li>
+      <li><a href="#m-produto" class="mm-nav-link">Peça em destaque</a></li>
+      <li><a href="#m-nfc" class="mm-nav-link">NFC Experience</a></li>
+      <li><a href="#m-colecoes" class="mm-nav-link">Coleções</a></li>
+      <li><a href="#m-instagram" class="mm-nav-link">Instagram</a></li>
+      <li><a href="#m-contato" class="mm-nav-link">Contato</a></li>
+    </ul>
+    <div class="mm-wpp">
+      <a href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson%20e%20quero%20mais%20informações." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_mmenu',{location:'mobile_menu'})">
+        ✦ Falar no WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- MOBILE HERO -->
+  <section class="mobile-hero" id="m-inicio" aria-labelledby="m-hero-title">
+    <div class="mh-content">
+      <div class="mh-eyebrow">Colecionáveis exclusivos</div>
+      <h1 class="mh-title" id="m-hero-title">Arte,<br>presença<br>e identidade</h1>
+      <div class="mh-subtitle">em cada peça</div>
+      <p class="mh-desc">Mascotes 3D premium, pintados à mão. Exclusividade real em cada detalhe.</p>
+      <div class="mh-pills">
+        <span>Impressão 3D premium</span>
+        <span>Pintura artesanal</span>
+        <span>Edição limitada</span>
+      </div>
+      <div class="mh-cta-stack">
+        <a class="mh-btn-main" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson%20e%20quero%20saber%20sobre%20as%20peças%20e%20valores." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_mhero',{location:'mobile_hero'})">
+          <span class="wpp-icon">✦</span> Quero o meu agora
+        </a>
+        <a class="mh-btn-secondary" href="#m-produto">Ver peça em destaque ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE PRODUCT -->
+  <section class="mobile-product" id="m-produto" aria-labelledby="m-prod-title">
+    <p class="mp-eyebrow">Peça em destaque</p>
+    <h2 class="mp-title" id="m-prod-title">Colecionável premium</h2>
+
+    <div class="mp-image-wrap">
+      <img src="./assets/img/mascote-produto.jpg" alt="Produto em destaque BobbyWilson" width="1264" height="844" loading="lazy" />
+      <span class="mp-badge">✦ Edição limitada</span>
+    </div>
+
+    <div class="mp-features">
+      <div class="mp-feat">
+        <span class="mp-feat-icon">🎨</span>
+        <span class="mp-feat-text">Pintura manual artesanal</span>
+      </div>
+      <div class="mp-feat">
+        <span class="mp-feat-icon">✦</span>
+        <span class="mp-feat-text">Impressão 3D premium</span>
+      </div>
+      <div class="mp-feat">
+        <span class="mp-feat-icon">🔖</span>
+        <span class="mp-feat-text">Assinatura visual própria</span>
+      </div>
+      <div class="mp-feat">
+        <span class="mp-feat-icon">📡</span>
+        <span class="mp-feat-text">Expansão NFC exclusiva</span>
+      </div>
+    </div>
+
+    <div class="mp-price-block">
+      <div class="mp-price-label">Disponibilidade sob consulta</div>
+      <div class="mp-price-value">Reserve pelo WhatsApp</div>
+      <div class="mp-price-sub">Atendimento direto e personalizado</div>
+    </div>
+
+    <a class="mp-cta-main" href="https://wa.me/5519999551961?text=Olá%2C%20quero%20saber%20sobre%20a%20peça%20em%20destaque%20da%20BobbyWilson.%20Valores%20e%20disponibilidade." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_mprod',{location:'mobile_product'})">
+      ✦ Quero garantir a minha
+    </a>
+    <a class="mp-cta-secondary" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'mobile_product'})">
+      Ver mais no Instagram
+    </a>
+    <div class="mp-trust">Atendimento seguro e direto</div>
+  </section>
+
+  <!-- MOBILE NFC -->
+  <section class="mobile-nfc" id="m-nfc" aria-labelledby="m-nfc-title">
+    <div class="mn-image">
+      <img src="./assets/img/Selo.jpg" alt="Selo BobbyWilson NFC" width="600" height="600" loading="lazy" />
+    </div>
+    <div class="mn-header">
+      <p class="mn-eyebrow">NFC Experience</p>
+      <h2 class="mn-title" id="m-nfc-title">Tecnologia NFC<br>integrada</h2>
+    </div>
+    <p class="mn-desc">Aproxime o celular da peça e acesse certificado, bastidores, lançamentos exclusivos e muito mais.</p>
+    <div class="mn-badges">
+      <div class="mn-badge">
+        <span class="mn-badge-icon">🏅</span>
+        Certificado de autenticidade
+      </div>
+      <div class="mn-badge">
+        <span class="mn-badge-icon">🎬</span>
+        Bastidores da criação
+      </div>
+      <div class="mn-badge">
+        <span class="mn-badge-icon">🔑</span>
+        Conteúdos exclusivos
+      </div>
+      <div class="mn-badge">
+        <span class="mn-badge-icon">🚀</span>
+        Lançamentos e novidades
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE COLLECTIONS CAROUSEL -->
+  <section class="mobile-collections" id="m-colecoes" aria-labelledby="m-col-title">
+    <div class="mc-header">
+      <p class="mc-eyebrow">Coleções</p>
+      <h2 class="mc-title" id="m-col-title">Linha visual pronta<br>para expansão</h2>
+    </div>
+    <div class="mc-carousel" id="mCarousel" role="list">
+      <article class="mc-card mc-card-first" role="listitem">
+        <div class="mc-card-title">Em breve</div>
+        <div class="mc-card-sub">Novos mascotes, novas histórias e variações visuais da coleção BobbyWilson.</div>
+        <a class="mc-card-cta" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'mobile_collections'})">
+          Acompanhar no Instagram
+        </a>
+      </article>
+      <article class="mc-card" role="listitem">
+        <img src="./assets/img/mascote-produto.jpg" alt="Próxima coleção BobbyWilson" width="1264" height="844" loading="lazy" />
+        <div class="mc-card-overlay"></div>
+        <span class="mc-pill">Em breve</span>
+      </article>
+      <article class="mc-card" role="listitem">
+        <img src="./assets/img/bobby-hero.jpg" alt="Coleção institucional BobbyWilson" width="1344" height="896" loading="lazy" />
+        <div class="mc-card-overlay"></div>
+        <span class="mc-pill">Em breve</span>
+      </article>
+      <article class="mc-card" role="listitem">
+        <img src="./assets/img/Selo.jpg" alt="Linha premium BobbyWilson" width="600" height="600" loading="lazy" />
+        <div class="mc-card-overlay"></div>
+        <span class="mc-pill">Em breve</span>
+      </article>
+    </div>
+    <div class="mc-dots" aria-hidden="true">
+      <div class="mc-dot active" id="mDot0"></div>
+      <div class="mc-dot" id="mDot1"></div>
+      <div class="mc-dot" id="mDot2"></div>
+      <div class="mc-dot" id="mDot3"></div>
+    </div>
+  </section>
+
+  <!-- MOBILE TESTIMONIALS -->
+  <section class="mobile-testimonials" aria-labelledby="m-test-title">
+    <p class="mt-eyebrow">Quem coleciona, aprova</p>
+    <h2 class="mt-title" id="m-test-title">Percepção premium<br>em cada detalhe</h2>
+    <div class="mt-quotes">
+      <div class="mt-quote">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-quote-text">Acabamento muito forte visualmente e presença absurda na peça.</p>
+        <span class="mt-quote-author">Cliente BobbyWilson</span>
+      </div>
+      <div class="mt-quote">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-quote-text">A proposta une tecnologia, identidade e coleção de um jeito único.</p>
+        <span class="mt-quote-author">Colecionador</span>
+      </div>
+      <div class="mt-quote">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-quote-text">A marca já transmite exclusividade antes mesmo do produto chegar.</p>
+        <span class="mt-quote-author">Público da marca</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE INSTAGRAM -->
+  <section class="mobile-instagram" id="m-instagram" aria-labelledby="m-ig-title">
+    <p class="mi-eyebrow">Instagram oficial</p>
+    <h2 class="mi-handle" id="m-ig-title">@bobbywilson3d</h2>
+    <p class="mi-desc">Bastidores, novas peças e movimentos da coleção BobbyWilson.</p>
+    <div class="mi-grid">
+      <div class="mi-tile"><img src="./assets/img/Selo.jpg" alt="BobbyWilson no Instagram" width="600" height="600" loading="lazy" /></div>
+      <div class="mi-tile"><img src="./assets/img/mascote-produto.jpg" alt="Produto BobbyWilson" width="1264" height="844" loading="lazy" /></div>
+      <div class="mi-tile"><img src="./assets/img/bobby-hero.jpg" alt="BobbyWilson hero" width="1344" height="896" loading="lazy" /></div>
+    </div>
+    <a class="mi-cta" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'mobile_instagram'})">
+      ✦ Abrir Instagram
+    </a>
+  </section>
+
+  <!-- MOBILE FOOTER -->
+  <footer class="mobile-footer" id="m-contato" role="contentinfo">
+    <div class="mf-brand">
+      <img src="./assets/img/Selo.jpg" alt="Selo BobbyWilson" width="120" height="120" loading="lazy" />
+      <div>
+        <div class="mf-brand-name">BOBBY<br>WILSON</div>
+        <div class="mf-brand-sub">3D Printing Creations</div>
+      </div>
+    </div>
+    <div class="mf-links">
+      <a class="mf-link" href="https://www.instagram.com/bobbywilson3d/" target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_instagram',{location:'mobile_footer'})">
+        <span class="mf-link-icon">📸</span> Instagram
+      </a>
+      <a class="mf-link" href="#m-colecoes">
+        <span class="mf-link-icon">✦</span> Coleções
+      </a>
+      <a class="mf-link" href="#m-nfc">
+        <span class="mf-link-icon">📡</span> NFC
+      </a>
+      <a class="mf-link" href="https://bobbywilson3d.github.io/bobbywilson-site/" target="_blank" rel="noopener noreferrer">
+        <span class="mf-link-icon">🌐</span> Site
+      </a>
+    </div>
+    <a class="mf-wpp" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer" onclick="trackEvent('click_whatsapp_mfooter',{location:'mobile_footer'})">
+      ✦ Falar no WhatsApp
+    </a>
+    <div class="mf-copyright">
+      © 2026 BobbyWilson 3D Printing Creations<br>Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- MOBILE FLOATING WHATSAPP -->
+  <a class="mobile-float-wpp" href="https://wa.me/5519999551961?text=Olá%2C%20vim%20pelo%20site%20da%20BobbyWilson." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" onclick="trackEvent('click_whatsapp_float',{location:'mobile_float'})"></a>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+
+      // ============================================================
+      // DESKTOP: header scrolled class
+      // ============================================================
+      const siteHeader = document.querySelector('.site-header');
+      if (siteHeader) {
+        const onScroll = () => {
+          siteHeader.classList.toggle('scrolled', window.scrollY > 48);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // ============================================================
+      // DESKTOP: nav active por seção
+      // ============================================================
+      const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+      const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const onNavScroll = () => {
+        const scrollY = window.scrollY + 120;
+        let current = '';
+        sections.forEach(s => { if (s.offsetTop <= scrollY) current = '#' + s.id; });
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === current));
+      };
+      window.addEventListener('scroll', onNavScroll, { passive: true });
+
+      // ============================================================
+      // DESKTOP + MOBILE: IntersectionObserver para reveal de seções
+      // ============================================================
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.bw-reveal').forEach((el, i) => {
+              setTimeout(() => el.classList.add('visible'), i * 90);
+            });
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.10 });
+
+      document.querySelectorAll('[data-bw-reveal]').forEach(sec => {
+        sec.querySelectorAll('.panel, .offer-copy, .offer-visual, .offer-about, .nfc-media, .nfc-badges, .collection-card, .quote, .instagram-tile, .footer-card').forEach(el => {
+          el.classList.add('bw-reveal');
+        });
+        revealObserver.observe(sec);
+      });
+
+      // ============================================================
+      // MOBILE: menu lateral
+      // ============================================================
+      const menuBtn    = document.getElementById('mMenuBtn');
+      const menuClose  = document.getElementById('mMenuClose');
+      const mobileMenu = document.getElementById('mMenu');
+      const overlay    = document.getElementById('mNavOverlay');
+      const mmNavLinks = document.querySelectorAll('.mm-nav-link');
+
+      function openMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add('open');
+        if (overlay) overlay.classList.add('open');
+        body.style.overflow = 'hidden';
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+      }
+      function closeMobileMenu() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        body.style.overflow = '';
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (menuBtn)   menuBtn.addEventListener('click', openMobileMenu);
+      if (menuClose) menuClose.addEventListener('click', closeMobileMenu);
+      if (overlay)   overlay.addEventListener('click', closeMobileMenu);
+      mmNavLinks.forEach(l => l.addEventListener('click', closeMobileMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+
+      // ============================================================
+      // MOBILE: carrossel de coleções — dots + auto-snap touch
+      // ============================================================
+      const carousel = document.getElementById('mCarousel');
+      if (carousel) {
+        const dots = [0,1,2,3].map(i => document.getElementById('mDot' + i));
+        const updateDots = () => {
+          const idx = Math.round(carousel.scrollLeft / (carousel.scrollWidth / dots.length));
+          dots.forEach((d, i) => { if(d) d.classList.toggle('active', i === idx); });
+        };
+        carousel.addEventListener('scroll', updateDots, { passive: true });
+
+        // Suporte a clique nos dots para navegar
+        dots.forEach((dot, i) => {
+          if (!dot) return;
+          dot.style.cursor = 'pointer';
+          dot.addEventListener('click', () => {
+            const cardWidth = carousel.scrollWidth / dots.length;
+            carousel.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+          });
+        });
+      }
+
+      // ============================================================
+      // MOBILE: lazy load suave nas imagens
+      // ============================================================
+      if ('IntersectionObserver' in window) {
+        const imgObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = '1';
+              imgObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          img.style.opacity = '0';
+          img.style.transition = 'opacity 0.55s ease';
+          imgObs.observe(img);
+        });
+      }
+
+    }); // DOMContentLoaded
+  </script>
+</body>
+</html>
